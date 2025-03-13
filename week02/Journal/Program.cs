@@ -12,7 +12,7 @@ class Program
 
         Journal myJournal = new Journal();
 
-        myJournal.EnsureFileExhists();
+        myJournal.EnsureFileExists();
 
         myJournal.load(false);
 

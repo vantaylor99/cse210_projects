@@ -212,7 +212,7 @@ public class Journal
 
     // Code that checks if journal.txt exists before running program, if not, creates a blank one. 
 
-    public void EnsureFileExhists()
+    public void EnsureFileExists()
     {
         if (!File.Exists(_filename))
         {

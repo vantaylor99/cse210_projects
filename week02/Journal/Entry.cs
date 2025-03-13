@@ -5,7 +5,6 @@ public class Entry
     // Primary function of the Entry class is to create a format for entries.
 
 
-
     // Variables used in class.
     public string _date;
     public string _prompt;
