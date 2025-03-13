@@ -14,7 +14,7 @@ class Program
 
         myJournal.EnsureFileExists();
 
-        myJournal.load(false);
+        myJournal.Load(false);
 
         int userInput = 0;
 
@@ -48,7 +48,7 @@ class Program
             if (userInput == 3)
             {
                 Console.WriteLine("Load");
-                myJournal.load(true);
+                myJournal.Load(true);
                 Console.WriteLine();
             }
             if (userInput == 4)

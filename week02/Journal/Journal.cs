@@ -6,14 +6,14 @@ public class Journal
 
 
     public string _filename = "journal.txt";
-    public List<Entry> myEntries = new List<Entry>();
+    public List<Entry> _entries = new List<Entry>();
 
 
 
     public void WriteEntry()
     {
         // Prompts the user for the date, dispalys the prompt, and prompts user for a response.
-        // Adds entry into the list myEntries
+        // Adds entry into the list _entries
 
         Console.WriteLine("Please enter the date: (MM/DD//YYYY)");
         string date = Console.ReadLine();
@@ -27,7 +27,7 @@ public class Journal
 
         Entry newEntry = new Entry(date, prompt, response);
 
-        myEntries.Add(newEntry);
+        _entries.Add(newEntry);
         Console.WriteLine("Entry added successfully. ");
         Console.WriteLine();
     }
@@ -65,7 +65,7 @@ public class Journal
     // Displaying / Saving / Loading Entries
     public void DisplayAllEntries()
     {
-        foreach (Entry storedEntry in myEntries)
+        foreach (Entry storedEntry in _entries)
         {
             storedEntry.DisplayEntry();
         }
@@ -88,7 +88,7 @@ public class Journal
 
         using (StreamWriter outputFile = new StreamWriter(_filename, false))
         {
-            foreach (Entry entrySave in myEntries)
+            foreach (Entry entrySave in _entries)
             {
                 outputFile.WriteLine();
                 outputFile.WriteLine($"Date: {entrySave._date}");
@@ -148,7 +148,7 @@ public class Journal
     }
 
     // Loading existing files
-    public void load(bool askForFileName)
+    public void Load(bool askForFileName)
     {
         // Prompts user for file name and loads inputed file.
         // If file doesn't exist loops back to the beginning. 
@@ -178,9 +178,9 @@ public class Journal
 
             foreach (Entry entry in loadedEntries)
             {
-                if (!myEntries.Exists(e => e._date == entry._date && e._prompt == entry._prompt && e._journalEntry == entry._journalEntry))
+                if (!_entries.Exists(e => e._date == entry._date && e._prompt == entry._prompt && e._journalEntry == entry._journalEntry))
                 {
-                    myEntries.Add(entry);
+                    _entries.Add(entry);
                 }
             }
 
@@ -200,9 +200,9 @@ public class Journal
             // Checks if entry already exists before adding it into .txt file 
             foreach (Entry entry in loadedEntries)
             {
-                if (!myEntries.Exists(e => e._date == entry._date && e._prompt == entry._prompt && e._journalEntry == entry._journalEntry))
+                if (!_entries.Exists(e => e._date == entry._date && e._prompt == entry._prompt && e._journalEntry == entry._journalEntry))
                 {
-                    myEntries.Add(entry);
+                    _entries.Add(entry);
                 }
             }
             Console.WriteLine($"Journal loaded successfully from '{_filename}'.");
