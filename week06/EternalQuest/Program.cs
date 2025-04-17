@@ -2,6 +2,12 @@ using System;
 using System.Diagnostics;
 using System.IO;
 
+
+// I added a little bit of creativity in this program by doing a couple of things, one was instead of setting up a user selection to save and load the program, I just incorporated it into the quittings section of the program
+// so when the user quits it automatically saves, and it automatically loads when the program starts. The second piece is small but I thought it would be cool to put the infinity sign inside the square brackets 
+// for eternal goals as they never end and we will always be progressing.  
+
+
 class Program
 {
     static void Main(string[] args)
