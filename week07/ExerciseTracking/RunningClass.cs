@@ -1,17 +1,17 @@
-public class Swimming : Activity
+public class Running : Activity
 {
 
 
-    private int _laps;
+    private float _distance;
 
-    public Swimming(string date, float minutes, int laps) : base(date, minutes)
+    public Running(string date, float minutes, float distance) : base(date, minutes)
     {
-        _laps = laps;
+        _distance = distance;
     }
 
     public override float GetDistance()
     {
-        return _laps * (50f / 1000f);
+        return _distance;
     }
     public override float GetSpeed()
     {
@@ -25,5 +25,6 @@ public class Swimming : Activity
         float minutes = GetLengthMinutes();
         return (minutes / distance);
     }
+
 
 }
